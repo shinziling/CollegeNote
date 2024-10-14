@@ -1,7 +1,7 @@
 
 ## Statement
 - A sentence that can be assigned a truth value to it either `true` or `false`
-- Not all sentences are statement
+- Not all sentence are statement
 - It is also called "Proposition"
 >[!example] Example of Statement
 >- 6 < 4
