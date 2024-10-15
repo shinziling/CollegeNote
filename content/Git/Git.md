@@ -5,7 +5,7 @@ Git is a open source version-control system(VCS) to help manage code and files f
 
 # Getting Started
 >[!info]
->This article will go over the basic function of git, it will go over the basic terminal based commands with a test repository I've created on Github. You can use any terminal of your choice but I recommend using a terminal that runs on UNIX command line terminal. You can always  run `git help` any time in the terminal to get a list of git commands.
+>This article will go over the basic function of git, its basic command line terminal. You can use any terminal of your choice but I recommend using a terminal that runs on UNIX command line terminal. You can always  run `git help` any time in the terminal to get a list of git commands.
 -  First make sure that git is properly install on your local machine run the command
 ```bash 
 git -v
@@ -35,8 +35,17 @@ git config user.email "Some email goes here"
 >To configure your information for all repo use `--global` after `config`
 
 >[!note]
->Now note this is only a local repository generally speaking we would like to link a remote repository to the local repository this way we can always push any changes made on the local repo to the remote repo. This allows us to have a backup of our project we can always clone from.
+>Now note this is only a local repository generally speaking we would like to link a remote repository to the local repository this way we can always push any changes made on the local repo to the remote repo. This allows us to create a backup of our project in case any goes wrong.  I will cover this later but for now we just go over basic git command.
+
+
+
+
+# Using Git Hosting Service
+
+> [!info]
+> For this section I will be using a test repo I have created on Github. You can use other services if you would like. 
 ## Linking a remote repository 
+1. First we would like to link the remote to our local
 
 To link a remote repository run the following command in your local repository
 ```bash
@@ -51,10 +60,12 @@ Now run
 git remote -v
 ```
 >[!success]
->If you see something like this then you have successfully link the repo.
+>If you see something like this after the command `git remote -v` then you have successfully link the repo:
 >>`origin  https://github.com/shinziling/testRepo.git (fetch)`<br>
 >>`origin  https://github.com/shinziling/testRepo.git (push)`
 
+>To remove the remote repo just run
+>`git remote rm origin`
 
 
 
