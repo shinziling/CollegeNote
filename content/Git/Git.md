@@ -45,7 +45,7 @@ git config user.email "Some email goes here"
 > [!info]
 > For this section I will be using a test repo I have created on Github. You can use other services if you would like. 
 ## Linking a remote repository 
-1. FIrst we would like to link the remote to our local
+1. First we would like to link the remote to our local
 
 To link a remote repository run the following command in your local repository
 ```bash
