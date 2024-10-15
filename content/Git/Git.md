@@ -52,8 +52,8 @@ git remote -v
 ```
 >[!success]
 >If you see something like this then you have successfully link the repo.
->` origin  https://github.com/shinziling/testRepo.git (fetch)`
->`origin  https://github.com/shinziling/testRepo.git (push)`
+>>`origin  https://github.com/shinziling/testRepo.git (fetch)`<br>
+>>`origin  https://github.com/shinziling/testRepo.git (push)`
 
 
 
