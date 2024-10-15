@@ -10,4 +10,5 @@ Study notes for different course materials will be posted below
 - [[Table of Content|Discrete Structure]]
 
 ## Useful Stuff to Know
-- [[Git]]
+- [[Git Function]]
+- 
