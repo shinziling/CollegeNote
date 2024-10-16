@@ -76,7 +76,7 @@ git commit -m "some message goes here"
 
 ## Branching
 
-Branching is of most utmost importance when it comes to git. Generally, we do not want to make changes directly to the main(sometimes called master) branch, so we would create a new branch off of the main branch or do a fork(covered later). The new branch will be based off of the latest commit that has been made to the main branch at the time the new branch was create; in other words you can have multiple branches off of the main branch at different commit history. 
+Branching is of most utmost importance when it comes to git. Generally, we do not want to make changes directly to the main(sometimes called master) branch since that branch will contain our most stable builds and deployment-ready build. So we would create a new branch off of the main branch or do a fork(covered later). The new branch will be based off of the latest commit that has been made to the main branch at the time the new branch was create; in other words you can have multiple branches off of the main branch at different commit history. 
 - This allows us to make any changes we want without modifying the content within main/master branch. 
 	- Useful when we want test a new feature we would like to implement to the main branch.
 	- And when we want to implement those feature to the main/master branch we can just do a merge.
@@ -156,8 +156,20 @@ git remote -v
 >To remove the remote repo just run `git remote rm origin`
 
 ## Cloning
+If you already have your remote repository set up on somewhere then you can do a clone instead and this would automatically add a folder in your current directory with the same name as the remote repository if you did not specify an specific name. This would also set up the remote. 
 
+Run the command
+```bash 
+git clone [url]
+```
+> If you would like to clone the remote repo to a specific folder with a specific name, add the name of the folder after the URL. If the folder is not empty, it will not clone the remote repo into that folder, also if there is no folder with that name in your current directory then it will automatically create a folder with that specific name before cloning the remote repo into the folder. 
 
+Now if you run 
+```bash 
+git remote -v
+```
+	You should see the remote, by default git names it origin and create a branch that matches the name of the default branch of the remote repo(the default branch is the main/master branch of the repo). So for example, if the name of the default branch is 
+	
 ## Tracking
 
 
