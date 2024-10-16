@@ -107,7 +107,7 @@ git merge [name_of_the_other_branch]
 > This would update the main branch content to match the newly created branch
 
 >[!info]
->There is other ways to merge two branch together such as `git rebase` but on the most basic level a `git merge` would do since that is the one people understand the most. Also, although it is called `merge` they do not actually merge together into one branch, the branch that you did the merge from still exist and you can still work on that branch.
+>There are other ways to merge two branch together such as `git rebase` but on the most basic level a `git merge` would do since that is the one people understand the most. Also, although it is called `merge` they do not actually merge together into one branch, the branch that you did the merge from still exist and you can still work on that branch.
 
 To merge main branch content on to another branch, let say someone did a commit to the main branch and you want to see if that commit still works with the feature you are working on in the current branch, you would do the exact same step as above but instead being in the main branch you would just be in the current branch you are working on and do a `git merge [name_of_the_main_branch]`. 
 - You can also do a merge between two branches that is not the main branch
@@ -152,8 +152,6 @@ git remote -v
 >>`origin  https://github.com/shinziling/testRepo.git (push)`
 >
 >It may not say `origin` for you depending on what you name the remote
-
-
 
 >To remove the remote repo just run `git remote rm origin`
 
