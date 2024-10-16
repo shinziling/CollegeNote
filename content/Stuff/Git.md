@@ -93,7 +93,7 @@ git checkout [name_of_the_branch]  # switch to the new branch
 >- `git switch -c [branch_name]`
 >> Both command will create and switch to the newly created branch
 
-> To see all existing branch simply run `git branch` 
+> To see all existing branch simply run `git branch` and to remove a branch run `git branch -d [name_of_the_branch]`
 
 Now let suppose we edit our README.md in our newly created branch. This change is only present within the newly created branch and not the main branch. If we want to implement the changes to the main branch we would do a merge on the main branch
 1. First change back to the main branch 
@@ -111,15 +111,22 @@ git merge [name_of_the_other_branch]
 
 To merge main branch content on to another branch, let say someone did a commit to the main branch and you want to see if that commit still works with the feature you are working on in the current branch, you would do the exact same step as above but instead being in the main branch you would just be in the current branch you are working on and do a `git merge [name_of_the_main_branch]`. 
 - You can also do a merge between two branches that is not the main branch
-	- Let you have `branch1` and `branch2` and both branches are not the main branch, but you can still perform a merge on `branch1` from `branch2` and vice versa. 
+	- Let say you have `branch1` and `branch2` and both branches are not the main branch, but you can still perform a merge on `branch1` from `branch2` and vice versa. 
 
-## Three Ways Merge vs Fast-Forward Merge
+>[!important]
+>A merge conflict may occur when merging two branches together if this happen git will abort the merge and require the user to resolve the conflict before proceeding with the merge again. To see conflict files do a `git status` and after fixing the conflict do a `git add .`  or `git add [name_of_conflicted_files]` (there can be more than one conflicted files) to stage the change and then  `git merge --continue` to continue the merge. Generally speaking you can do `git status` again after resolving the conflict and it will typically tell you what to do to continue the merge.
+>>If you're really stuck do a `git merge --abort` to abort the merge completely or do a `git reset --hard` this would reset your branch to its last commit state but do note it will remove all uncommitted changes.
 
-When performing a `git merge`, git would do either a fast-forward merge or a three ways merge depending on the situation. 
+
+## Three-Way Merge vs Fast-Forward Merge
+
+When performing a `git merge`, without any configuration, git would do either a fast-forward merge or a three-way merge depending on the situation. 
 1. A fast-forward merge will occur by default if there is no divergent in its commit history between the two branches. 
-2. A three ways merge will occur by default if there is divergent.
+2. A three-way merge will occur by default if there is divergent.
 Here is a [video](https://www.youtube.com/watch?v=zOnwgxiC0OA) that explains it better with motion graphic. The video also goes into the technical differences between `git rebase` and `git merge`. 
-
+>In Layman's language, a `git rebase` will re-anchor your commits to tip of the latest commit made on the main branch in order to make the commit history linear. This makes the commit history easier to read and understand but it does have a downside of rewriting commit history and makes it hard for other people working in the same branch to merge their commits as it makes it confusing, and makes it a pain to debug and resolve conflict. In other words do not use `git rebase` on a public repository where there are other people working on it, only used it in your own local repository or a private remote repository(we will talk about remote repository later).
+>> As long as you follow this quote from the Git official documentation about [rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) you will be fine
+>> - **"Do not rebase commits that exist outside your repository and that people may have based work on."**
 # Using Git Hosting Service
 
 > [!info]
@@ -129,7 +136,7 @@ Here is a [video](https://www.youtube.com/watch?v=zOnwgxiC0OA) that explains it 
 
 To link a remote repository run the following command in your local repository
 ```bash
-git remote add origin [remote_repo_url]
+git remote add [remote_name] [remote_repo_url]
 ```
 As mentioned above I will be using a test repo I created, so I would run the command like this 
 ```bash 
@@ -143,8 +150,18 @@ git remote -v
 >If you see something like this after the command `git remote -v` then you have successfully link the repo:
 >>`origin  https://github.com/shinziling/testRepo.git (fetch)`<br>
 >>`origin  https://github.com/shinziling/testRepo.git (push)`
+>
+>It may not say `origin` for you depending on what you name the remote
+
+
 
 >To remove the remote repo just run `git remote rm origin`
+
+## Cloning
+
+
+## Tracking
+
 
 
 
