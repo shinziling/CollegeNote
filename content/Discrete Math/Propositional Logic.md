@@ -1,14 +1,14 @@
 
 ## Statement
 - A sentence that can be assigned a truth value to it either `true` or `false`
-- Not all sentence are statement
+- Not all sentences are statements
 - It is also called "Proposition"
 >[!example] Example of Statement
 >- 6 < 4
 >- There exist some integer x such that x > 2
 
 >[!note]
->If the sentence contains any "ambiguous" like word such as "she, he, they or them", they are not statement. 
+>If the sentence contains any "ambiguous" words such as "she, he, they or them", they are not statement. The words must be specific. 
 >>[!example]
 >> - She lives at 1234 Main Street 
 >> > That is not a statement the word "she" is basically treated like a free variable or unbound variable ***X*** you would need to specify who "she" is for it to be considered a statement.
