@@ -80,22 +80,32 @@ Branching is of most utmost importance when it comes to git. Generally, we do no
 - This allows us to make any changes we want without modifying the content within main/master branch. 
 	- Useful when we want test a new feature we would like to implement to the main branch.
 	- And when we want to implement those feature to the main/master branch we can just do a merge.
+>When creating a new branch, the new branch is based off of the current branch you are in and contains all the files of the current branch and its commit history. The new branch also does not have to be based off of the main branch.
 1. To create a new branch run these command in your local repository
 ```bash
-git branch [name_of_the_branch]    # create the new branch if it didn't already exist
-git checkout [name_of_the_branch]  # switch to the new branch
+git branch [new_branch_name]    # create the new branch if it didn't already exist
+git checkout [new_branch_name]  # switch to the new branch
 ```
-> You can also use `git switch` instead of `git checkout` they essentially do the same thing if no unique flags are given. `git switch` is basically a split off command of the `git checkout` command. To further understand these two commands I recommend reading the official git documentation for [switch](https://git-scm.com/docs/git-switch) and [checkout](https://git-scm.com/docs/git-checkout). 
+> This will create a branch based off of the current branch you are in. You can also use `git switch` instead of `git checkout` they essentially do the same thing if no unique flags are given. `git switch` is basically a split off command of the `git checkout` command. To further understand these two commands I recommend reading the official git documentation for [switch](https://git-scm.com/docs/git-switch) and [checkout](https://git-scm.com/docs/git-checkout). 
 
 >[!tip]
 >You can simplify the process of creating a branch and switching to the branch in one terminal line command. Simply run 
->- `git checkout -b [branch_name]` or
->- `git switch -c [branch_name]`
+>- `git checkout -b [new_branch_name]` or
+>- `git switch -c [new_branch_name]`
 >> Both command will create and switch to the newly created branch
+>
+>If you want to create a branch based off of another branch and not the current branch you're in then run 
+>- `git checkout -b [new_branch_name] [name_of_another_branch]`
+>
+>To create an completely empty branch run 
+>- `git switch --orphan [new_branch_name]`
+>	- This would create a branch with no files or folders except for the one git does not track
+
+
 
 > To see all existing branch simply run `git branch` and to remove a branch run `git branch -d [name_of_the_branch]`
 
-Now let suppose we edit our README.md in our newly created branch. This change is only present within the newly created branch and not the main branch. If we want to implement the changes to the main branch we would do a merge on the main branch
+Now let suppose we edit our README.md in our newly created branch. This change is only present within the newly created branch and not the main branch. If we want to integrate the changes to the main branch we would do a merge on the main branch
 1. First change back to the main branch 
 ```bash 
 git checkout [name_of_the_main_branch] # most likely to be called master or main
@@ -107,7 +117,7 @@ git merge [name_of_the_other_branch]
 > This would update the main branch content to match the newly created branch
 
 >[!info]
->There are other ways to merge two branch together such as `git rebase` but on the most basic level a `git merge` would do since that is the one people understand the most. Also, although it is called `merge` they do not actually merge together into one branch, the branch that you did the merge from still exist and you can still work on that branch.
+>There are other ways to merge two branch together such as `git rebase` but on the most basic level a `git merge` would do since that is the one people understand the most. Also, although it is called `merge` they do not actually merge together into one branch, the branch that you did the merge from still exist and you can still work on that branch. All `git merge` do is integrate changes from one branch on to your current branch
 
 To merge main branch content on to another branch, let say someone did a commit to the main branch and you want to see if that commit still works with the feature you are working on in the current branch, you would do the exact same step as above but instead being in the main branch you would just be in the current branch you are working on and do a `git merge [name_of_the_main_branch]`. 
 - You can also do a merge between two branches that is not the main branch
@@ -117,6 +127,8 @@ To merge main branch content on to another branch, let say someone did a commit 
 >A merge conflict may occur when merging two branches together if this happen git will abort the merge and require the user to resolve the conflict before proceeding with the merge again. To see conflict files do a `git status` and after fixing the conflict do a `git add .`  or `git add [name_of_conflicted_files]` (there can be more than one conflicted files) to stage the change and then  `git merge --continue` to continue the merge. Generally speaking you can do `git status` again after resolving the conflict and it will typically tell you what to do to continue the merge.
 >>If you're really stuck do a `git merge --abort` to abort the merge completely or do a `git reset --hard` this would reset your branch to its last commit state but do note it will remove all uncommitted changes.
 
+>[!info]
+>All the branches you have made are called local branches since they only exist on your local repository we will talk about remote branches later.
 
 ## Three-Way Merge vs Fast-Forward Merge
 
@@ -132,7 +144,7 @@ Here is a [video](https://www.youtube.com/watch?v=zOnwgxiC0OA) that explains it 
 > [!info]
 > For this section I will be using a test repo I have created on Github. You can use other services if you would like. 
 ## Linking a remote repository 
-1. First we would like to link the remote to our local
+1. First we would like to link a remote repo to our local repo
 
 To link a remote repository run the following command in your local repository
 ```bash
@@ -155,12 +167,14 @@ git remote -v
 
 >To remove the remote repo just run `git remote rm origin`
 
-## Cloning
+>[!info]
+>You can add more than one remote to your local repo, just run the `git remote add` command again with a different URL and give it a unique name. 
+### Cloning
 If you already have your remote repository set up on somewhere then you can do a clone instead and this would automatically add a folder in your current directory with the same name as the remote repository if you did not specify an specific name. This would also set up the remote. 
 
 Run the command
 ```bash 
-git clone [url]
+git clone URL
 ```
 > If you would like to clone the remote repo to a specific folder with a specific name, add the name of the folder after the URL. If the folder is not empty, it will not clone the remote repo into that folder, also if there is no folder with that name in your current directory then it will automatically create a folder with that specific name before cloning the remote repo into the folder. 
 
@@ -168,10 +182,173 @@ Now if you run
 ```bash 
 git remote -v
 ```
-	You should see the remote, by default git names it origin and create a branch that matches the name of the default branch of the remote repo(the default branch is the main/master branch of the repo). So for example, if the name of the default branch is 
-	
-## Tracking
+You should see the remote. 
+>By default git names the remote `origin` and creates a branch that matches the name of the default branch of the remote repo(the default branch is the main/master branch of the repo). So for example, if the name of the default branch is `main` then after the clone it will create a local branch with the name `main`.  
+
+>[!note]
+>When you clone, the folder that you clone the remote repo into is your local repo that only exist on your local machine it is just linked to a remote repository. Therefore any changes made will only be present in your local repo.
+## Tracking and Making Changes
+
+When you clone a remote repository, git will automatically set the `main branch` on your local machine to track the `main branch` on the remote repository that you just clone. 
+
+> 1. You can run `git branch -vv` to see all the tracking information
+> 2. Run `git branch -r` to see all the remote branches that exist on the remote repo
+> 
+> Note: when you run `git branch -r` you may see something like `origin/HEAD -> origin/main` this is something that is set by default by the repo you first cloned, you can change the pointer of where `origin/HEAD` is referencing to another branch on `origin` if you want but it is not recommended if you do not what you are doing. All this is telling git to do is to checkout that remote branch by default if the remote name is specified and not a specific branch. For example if you run `git log origin` it will give the commit history of the branch `origin/HEAD` is referencing since a specific branch is not specified. This is also used during cloning purpose where if you clone a remote repo, by default it will clone the remote branch HEAD is pointing to which is usually the default(main/master) branch, however, this depends on how the remote repository is set up. But right now this is not really important for us.
+
+### Branch Tracking
+
+You can specified each local branch to track a specific remote branch. 
+
+> If there is a new remote branch that has been added to the remote repo and you want to track that newly added remote branch then you have to do a `git fetch` to download that new remote branch on to your local repo first. 
+
+Let suppose you created a new branch within your local repository and you want to set that branch to track a remote branch on the remote repo. Run the command
+```bash 
+git branch [local_branch_name] --set-upstream-to [remote_name]/[remote_branch_name]
+```
+> You can use the flag `-u` instead of `--set-upstream-to` as short hand<br> 
+> `branch_name` can also come after `remote_name/remote_branch`, so you can do
+> >`git branch -u [remote_name]/[remote_branch] [local_branch_name]`
+
+Alternatively, you can first switch to the branch then run
+```bash 
+git branch -u [remote_name]/[remote_branch_name]
+```
+
+So if I create a local branch called `test`, I will just run
+```bash 
+git branch test -u origin/test
+# Alternatively, I can switch then set up the track
+git checkout test
+git branch -u  origin/test
+```
+> Your local branch name does not have to be the same name as the remote branch
+
+But let say there is a remote branch that you want to checkout but it does not exist on your local repo yet or if you don't have a local branch that is tracking that remote branch and you would like to setup tracking for that remote branch then you can just run the `checkout` or `switch` command
+
+So run either
+```bash 
+git checkout [remote_branch_name]
+# Alternatively
+git switch [remote_branch_name]
+```
+> Git will automatically create a new local branch with the same name as the remote branch name and set up the tracking.
+
+>[!note]
+>Make sure you haven't created a local branch that has the same name as the remote branch or else when you run the `switch` or `checkout` command it will just switch to the local branch with that name and not set up the tracking. 
+>>[!info]
+>>
+>>If you have multiple remotes setup in that local repo then git will may require you to manually create a local branch and specify the remote. So you would run
+>>- `git checkout -b [new_local_branch] [remote_name]/[remote_branch_name]`
+>>- or, `git switch -c [new_local_branch] [remote_name]/[remote_branch_name]`
+>>
 
 
 
+>[!tip]-
+>You can have more than one local branch tracking the same remote branch!
+### Git Pull, Git Fetch and Git Merge
 
+When doing a `git pull` git actually runs two commands `git fetch` and `git merge`
+- `git fetch` download all new commits/changes from a remote repo on to your local repository. But your local repo has not yet integrate those new commits/changes yet in other word it is there but the change is not yet merge with your local repo.
+- `git merge` integrate those new commit/changes onto your local repository. 
+
+To perform fetch from a specific remote
+```bash 
+git fetch [remote_name]
+```
+To perform fetch from a specific remote branch 
+```bash 
+git fetch [remote_name] [remote_branch]
+```
+
+>[!info]
+>The main difference between the two commands is that: 
+>- `git fetch [remote_name]` would download all changes from the specify remote repo across all its remote branches
+>- `git fetch [remote_name] [remote_branch]` will just download changes from that specific remote branch from that remote
+>
+>If there are multiple remotes, a`git fetch` that does not specified any remote will by default used the `origin` remote(even if the current branch is not tracking any remote branch) however if the current branch is tracking a remote branch from another remote then that remote will be used instead.
+
+To integrate changes from a specific remote branch on to your current branch
+```bash 
+git merge [remote_name]/[remote_branch]
+```
+To integrate changes from a local branch on to your current branch 
+```bash 
+git merge [local_branch_name]
+```
+
+>[!info] 
+>`git merge` vs `git merge [remote_name]/[remote_branch]`
+>- What is the difference? 
+>	- The former will try to integrate any new commits/changes hat has been downloaded from the remote branch that your current branch is tracking if the current branch is not tracking any remote branch or no new commits/changes were downloaded then this command does nothing. Generally speaking a `git merge` does nothing if a `git fetch` command is not performed first. 
+>	- The latter forcefully integrates changes from the specified remote branch onto your current branch regardless of whether or not your current branch is tracking any remote branch. If your current branch contains any files this command can overwrite, delete or add files into your current branch so be careful with this command. But generally speaking half the time it will result in a merge conflict if the current branch is not empty. Do also note even if `git fetch` is not performed first this command will try to integrate the already downloaded commits/changes from the specify remote branch on to your current branch but not the new commits/changes that has not been downloaded yet.
+
+
+ To pull from a specific remote
+```bash 
+git pull [remote_name]
+```
+>This would do a `git fetch [remote_name]` and `git merge` on the current branch if the current branch is tracking a branch from that remote
+
+To pull from a specific remote branch 
+```bash 
+git pull [remote_name] [remote_branch]
+```
+> This would do a `git fetch [remote_name] [remote_branch]` and `git merge [remote_name]/[remote_branch]`
+
+>[!info]
+>A basic `git pull` does a basic `git fetch` that does not specify any remote and `git merge` that does not specify any remote branch. To understand what these basic command reread the information given above.
+>>[!note]
+>>
+>>Although the `git pull` command is a convenient way to use both `git fetch` and `git merge` at once it is generally avoided by professionals instead they would recommend do a `git fetch` first and examine the changes and if you would like to integrate those changes then do a `git merge` or `git pull` after `git fetch`. But generally speaking that depends on the situation and there are also different `git pull` strategies you can use but for now you just need to know the generic `git pull`. 
+>>- Note after you do a `git fetch` it generally doesn't really matter if you do a `git pull` or `git merge`. But if new commits/changes were made after your initial `git fetch` then a `git pull` would download those new commits/changes and integrate them into your current branch which may be a problem since you did not examine those changes so to be safe it better to just do a `git merge` after `git fetch`. 
+
+>[!tip]- 
+>
+>The command given above do not automatically set up tracking but we can do a `git pull` and set up tracking at the same time. Run the command:
+>- `git pull -u [remote_name] [remote_branch]` in your current branch 
+>	- This would do a `git pull [remote_name] [remote_branch]` and set the current branch to track that remote branch.
+
+
+### Git push 
+
+Now here comes the fun part after we made our commits/changes we would like to push the commits/changes to the remote repo for other to see and pull from. 
+
+> New commits and changes are made when `git commit -m "some message goes here"` is performed. But remember to commit something you must first stage a change using `git add .` or `git add [file_name]`
+
+To push to a specified remote 
+```bash 
+git push [remote_name]
+```
+To push a specific local branch to the remote repo
+```bash
+git push [remote_name] [local_branch_name]
+```
+To push to a remote branch with a different name from the current or any local branch
+```bash 
+git push [remote_name] [local_branch_name]:[remote_branch_name]
+```
+>[!info]
+>Differences between the three commands
+>1. The first command will try to push the commits/changes to a remote branch that the current branch is tracking if the current branch is not tracking any remote branch then this command does nothing.
+>		- This command would also fail if the tracked remote branch name is different from the current branch name even if the current branch is tracking that branch.\
+>		- Now here is confusing part if the tracked remote branch that the current branch is tracking does not exist on the specified remote then git will actually create a new remote branch on that specified remote based off of the current branch. But why it does this? Well, I don't exactly know why.
+>1. The second command will try to push any new commits/changes made on that local branch to the remote repo assuming no merge conflict happen. However two cases can happen
+>		1. If there is a remote branch with the same name as the local branch it will try to push the new commits/changes to that remote branch
+>		2. If there no remote branch with the same name as the local branch then git will create a new remote branch on the remote repo with the same name as the local branch
+>2. This would push new commits/changes from the specified local branch to the specified remote branch
+>
+>if there are multiple remote, a `git push` that does not specified any remote would by default used the `origin` remote(even if the current branch is not tracking any remote branch) unless the current branch is tracking a remote branch from another remote then that remote is used instead. 
+
+>[!note]
+>Git may required you to do a `git pull` first before you push your new commits/changes when this happen it just mean there are new commits/changes that your current branch does not from the remote branch since someone else may have push a new commit to that remote branch this is to make sure that after your new commits/changes still works with those new commits/changes that someone else made. 
+>- Also certain errors may occur such as you creating a new local branch that has completely different history from the remote branch you are trying to push to, this would not work even if the two branches have the same name. 
+>> [!example]
+>> 
+>> Let say a remote branch called `feature` exist on the remote repo and you create a new local branch called `feature` although they are the same name you may not be able to push local branch `feature` to remote branch `feature` since your local branch `feature` may have completely different commit history depending how it is created(see [[#Branching]] section). To fix this either create a completely empty local branch `feature` with no history at all(see [[#Branching]] section to see how to do this) then do a `git pull origin feature` or `git merge origin/feature` to integrate the commits history and files from remote branch `feature` into local branch `feature`. Or instead creating a local branch called `feature` we just do a `git checkout feature` since `feature` is not an local branch yet it will just create a `feature` branch based off of the remote branch `feature` and also set up tracking for us. 
+
+>[!tip]-
+>To push and set up tracking at the same time run
+>- `git push -u [remote_name] [local_branch_name]`
+>	- This would run `git push [remote_name] [local_branch_name]` and set up tracking for the specified local branch. 
