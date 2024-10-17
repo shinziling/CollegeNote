@@ -352,3 +352,105 @@ git push [remote_name] [local_branch_name]:[remote_branch_name]
 >To push and set up tracking at the same time run
 >- `git push -u [remote_name] [local_branch_name]`
 >	- This would run `git push [remote_name] [local_branch_name]` and set up tracking for the specified local branch. 
+
+
+
+## Pull Request 
+
+If you are collaborator for a remote repo, normally the repo owner prevent any direct changes onto the main branch and would required collaborator to make changes on a separate branch and create a pull request to integrate changes from one branch into another. <br>
+Now pull request is not a git feature it is feature in which git hosting services use, in Github you would create a pull request on the repository to compare and merge the commit on the source branch into the destination branch and a discussion would open, in which collaborator would discuss whether or not to merge the commit onto the destination branch. 
+- It typically require a certain amount of approvals before the merge can happen, however, the repo owner can force merge the commit without the required number of approval.
+
+>[!info]
+>
+>You can merge commit between branch however you want in your local repository for testing purpose and it is generally recommended you do your own testing first before opening a pull request.
+>
+> >[!note]
+> >
+> >Note everything here is in regards with personal repository. Github also have something called organization and repository that belongs to an organization works differently from a personal repository since an organization support a feature called teams each teams performs a specific role in the organization but an organization repo can also have collaborator. However, a pull request still works the same. 
+## Forking
+
+If you are not an collaborator for an repo then you do not have any direct access to the repo itself and cannot open branch directly on the repo. However, you can fork the repo into your own repo as long as the repo you are trying to fork is public(after all you can't see a private repo) .<br>
+To fork an repository
+1. Go to the Github page of the repo you wish to clone
+2. press the fork button in the top-right hand area of the repository page.
+4. It will then tell you to create a copy of that repository into your own account and depending on the scenario, in most cases you only just want to copy the default branch and this should be checked by default, if you unchecked this it would copy all the branches. 
+
+After forking you can then clone the repository you just fork from your own account and onto your local machine. You can now add branches to the forked repo, make changes and push changes to the remote branch. When you make changes the changes is only present in your own forked version of the original repo. This way you can test your changes and feature you would like to add.<br>
+The forked repo is also linked to the original repo so you can also make pull request from the forked repo. 
+>[!note]
+>It is recommended that after you clone the forked repository into a local repository you keep the local sync up to the original, so you would add original repository as another remote in your local repo. In Github the new remote would be named `upstream`. This way you can also pull changes from the original repo into your local repo to keep the repo up to date with the original. <br> 
+>It is also recommended that you create a new branch off of the default branch after the fork, this is because even though it is a fork we want the default branch of the forked repo to be kept in sync of original repo default branch so we would not want to directly commit changes into the default branch instead we would just want to pull changes from the original repo default branch onto our forked repo default branch.
+# Other Useful Git Feature
+
+## FETCH_HEAD
+When you do a `git fetch` such as `git fetch [remote_name] [remote_branc]` a temporary FETCH_HEAD branch will be created referencing the latest fetched commit. <br> 
+We can then switch to the FETCH_HEAD using:
+```bash 
+git checkout FETCH_HEAD
+```
+This put us in a detached HEAD state and allows us to examine the commit and make experimental commit if we like and any commit we made in this state is loss after we switch out of FETCH_HEAD. If we want to retain those commits we can create a new branch using:
+```bash 
+git switch -c [new_branch_name]
+```
+
+>[!info]
+>HEAD just mean it references the latest commit you made on the current branch. This is also known as the tip of the branch. 
+
+## Git Stash
+This is an advance git feature which allows you to move your uncommitted changes aside stashing them and put them on a stack. It would then revert your working directory back to the last commit you made in the current branch in other word the HEAD commit.<br>
+To stash run
+```bash 
+git stash
+```
+> You can stash multiple times and it put each stash on top of the stack, meaning the very top of the stack is your latest stash
+
+If you are lazy like me we can stash all the files(tracked and untracked) without having to do `git add` 
+```bash 
+git stash -u
+```
+> This is same thing as doing `git add .` then `git stash` 
+
+To see all stashes run
+```bash 
+git stash list
+```
+> This would list all your current stashes with a number associated with each one, the stash on the very top is indexed-0
+
+To see all file changes in the stash run
+```bash
+git stash show
+```
+
+To reapply the latest stash run
+```bash
+git stash pop
+```
+
+To specify a stash run 
+```bash
+git stash pop --index [number]
+```
+> Example: `git stash pop --index 1` will reapply the second stash on the stack since the first stash is indexed 0 
+
+We can also give each stash a name to help organize the stash 
+```bash 
+git stash -m 'some message goes here'
+```
+>So if you run `git stash list` you can see the name next to each stash
+
+We can also create a new branch and apply a stash on that branch
+```bash 
+git stash branch [new_branch_name] [stash_index_number]
+```
+
+To drop a stash in other word if we don't want those commit anymore run 
+```bash 
+git stash drop stash@{index_number}
+```
+>So if I run `git stash drop stash@{0}` this would drop the stash at index 0
+
+To completely drop all stash run
+```bash
+git stash clear
+```
