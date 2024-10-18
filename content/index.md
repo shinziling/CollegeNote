@@ -2,13 +2,13 @@
 title: Welcome!
 ---
 
-Study notes for different course materials will be posted below
+This is an area where multiple courses material notes will be posted.
 
 
 ## Computer Science
-
 - [[Table of Content|Discrete Structure]]
 
 ## Useful Stuff to Know
-- [[Git Function]]
-- 
+This section contains useful tools to know
+- [[Git]]
+
