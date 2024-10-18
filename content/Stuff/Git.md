@@ -2,7 +2,6 @@
 Git is a open source version-control system(VCS) to help manage code and files for a specific project.
 - Often used in a collaboration environment where multiple people are working on the same project.
 - Some cloud-based platforms such as Github or Gitlab allow the usage of git to backup project to a user repository on their website.  
-
 # Getting Started
 >[!info]
 >This article will go over the basic function of git, its basic command line terminal. You can use any terminal of your choice but I recommend using a terminal that runs on UNIX command line terminal. You can always  run `git help` any time in the terminal to get a list of git commands.
@@ -63,7 +62,7 @@ git status
 ```
 
 >[!note]
->Note when running `git add .` you may have added file that you do not want to commit if so add a `.gitignore` file in the repo. Then add the the name of files you do not want to be added to the stage environment in the `.gitignore` file
+>Note when running `git add .` you may have added file that you do not want to commit if so add a `.gitignore` file in the repo. Then add the the name of files you do not want to be added to the stage environment in the `.gitignore` file. 
 
 2. After staging all the files we can now commit the change
 ```bash 
@@ -141,8 +140,7 @@ Here is a [video](https://www.youtube.com/watch?v=zOnwgxiC0OA) that explains it 
 >> - **"Do not rebase commits that exist outside your repository and that people may have based work on."**
 # Using Git Hosting Service
 
-> [!info]
-> For this section I will be using a test repo I have created on Github. You can use other services if you would like. 
+This section will talk about using a git hosting service to backup local repository to a remote repository. I will be using Github for this purpose you can use other git services if you like. 
 ## Linking a remote repository 
 1. First we would like to link a remote repo to our local repo
 
