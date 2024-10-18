@@ -1,25 +1,32 @@
 
 ## Statement
-- A sentence that can be assigned a truth value to it either `true` or `false`
-- Not all sentences are statements
+- A sentence that can be assigned a truth value of either `true` or `false`.
+- Not all sentences are statements 
+	- However all statements by definition must be sentences
 - It is also called "Proposition"
 >[!example] Example of Statement
 >- 6 < 4
->- There exist some integer x such that x > 2
+>	- This would be `false`. 6 is not greater than 4
+>- There exists some integer x such that x > 2
+>	- This would be `true`. There does exist some integer (labeled x) that is greater than 2
 
 >[!note]
 >If the sentence contains any "ambiguous" words such as "she, he, they or them", they are not statement. The words must be specific. 
 >>[!example]
 >> - She lives at 1234 Main Street 
->> > That is not a statement the word "she" is basically treated like a free variable or unbound variable ***X*** you would need to specify who "she" is for it to be considered a statement.
+>> > This is not a statement. The word "she" is effectively treated like a free variable or unbound variable ***X***. This means that "she" is too vague and can be applied to any female. You would need to specify who "she" is for it to be considered a statement.
 >
 > Also Note: 
->- Opinion are not statement
->> Chocolate ice cream are the best flavored ice cream
->- Question are not statement
+>- Opinions are not statements
+>> Chocolate ice cream is the best flavored ice cream
+>> >This is objectively false by the way. Still an opinion.
+>- Questions are not statements
 >>What is the weather today? 
->- Command are not statement
+>>>Try assigning a `true` or  `false` value to this one. You'll find its not possible.
+>- Commands are not statements
 >> Hey go close that door now!
+>> >Once again, Try assigning a `true` or `false` value to this one. 
+
 
 ## Logical Connectivity 
 - They are used to connect statements together to form, according to my professor, more complex statements.
@@ -31,7 +38,9 @@
 | $$\sim (\neg)$$ | not     |
 - ### Some Simple Usage of Connectivity
 	- Suppose $$p$$
-= `"I am getting an A"` and $$q$$
+= `"I am getting an A"` 
+
+and $$q$$
 = `"I am in denial"`
 		- A simple form of connectivity can be $$p \wedge q$$
 			- This would mean `I am getting an A and I am in denial`
@@ -40,7 +49,7 @@
 > - $$\sim (\neg)$$ takes precedence over $$\wedge$$ and $$\vee$$
 > - $$\wedge$$ and $$\vee$$ have the same precedence.
 >>[!important] Important
->>- When dealing with $$\wedge$$ and $$\vee$$ parenthesis is needed to specify what comes first or else it is not considered a statement unless it contains all the same connectivity
+>>- When dealing with $$\wedge$$ and $$\vee$$ parenthesis are needed to specify what comes first or else it is not considered a statement, unless it contains all the same connectivity
 >>>[!example] Example
 >>>- Suppose we used the same example ***p*** and ***q*** above and introduce a new variable ***r***, suppose ***r*** = `I am angry.` 
 >>>		- $$p \wedge q \vee r$$, is not a valid statement (Parenthesis is needed!!!). 
