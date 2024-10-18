@@ -1,11 +1,11 @@
 # What is Git?
-Git is a open source version-control system(VCS) to help manage code and files for a specific project.
+Git is an open source version-control system(VCS) used to help manage code and files for a specific project.
 - Often used in a collaboration environment where multiple people are working on the same project.
-- Some cloud-based platforms such as Github or Gitlab allow the usage of git to backup project to a user repository on their website.  
+- Some cloud-based platforms such as Github or Gitlab allow the usage of git to backup the project to a user repository on their website.  
 # Getting Started
 >[!info]
 >This article will go over the basic function of git, its basic command line terminal. You can use any terminal of your choice but I recommend using a terminal that runs on UNIX command line terminal. You can always  run `git help` any time in the terminal to get a list of git commands.
--  First make sure that git is properly install on your local machine run the command
+-  First make sure that git is properly installed on your local machine. To do so, run the command:
 ```bash 
 git -v
 ```
@@ -13,7 +13,7 @@ It should pop up something along line of `git version [verison number]` if not, 
 
 ## Now to initialize a local git repository
 1. First create a folder/directory where you would initialize git
-	- You can create a folder using the terminal if you would like with the following command then `cd` into the folder you just made
+	- You can create a folder using the terminal if you would like with the following command. Then use `cd` to enter the folder you just made
 ```bash 
 mkdir [folder_name] # Make a directory
 cd [folder_name]    # change directory 
@@ -23,31 +23,31 @@ cd [folder_name]    # change directory
 git init
 ```
 >[!note]
->You can run `git init` in any folder that you would like to track changes it does not have to be an empty folder/directory. Just `cd` into the folder you would like to track changes and run `git init` to set up git in that folder
+>You can run `git init` in any folder that you would like to track changes it does not have to be an empty folder/directory. Just `cd` into the folder you would like to track changes in, and run `git init` to set up git in that folder
 
->To check if you properly initialize git run `ls -a` you should see a `.git` file listed
+>To check if you properly initialize git run `ls -a`. You should see a `.git` file listed
 
-To configure your user information for the current repository you're in run 
+To configure your user information for the current repository you're in, run 
 ```bash 
 git config user.name "Some name goes here"
 git config user.email "Some email goes here"
 ```
 
->To configure your information for all repo use `--global` after `config`
+>To configure your information for all repositories append `--global` after `config` when using the above commands
 
 >[!note]
->Now note this is only a local repository generally speaking we would like to link a remote repository to the local repository this way we can always push any changes made on the local repo to the remote repo. This allows us to create a backup of our project in case any goes wrong.  I will cover this later but for now we just go over basic git command.
+>Now note this is only a local repository. Generally speaking we would like to link a remote repository to the local repository, this way we can always push any changes made on the local repo to the remote repo. This allows us to create a backup of our project in case anything goes wrong.  I will cover this later but for now we just go over basic git commands.
 
 ## Staging
 
-After creating our local repository we can start using git for real 
+After creating our local repository we can start using git for real.
 
-1. First in your local repository add some files to your local repo. I will add a README.md file to illustrate this, we can use the terminal to add the file and make changes to the file. Run this command in your local repo.
+1. First, in your local repository add some files to your local repo. I will add a README.md file to illustrate this, and we can use the terminal to add the file and make changes to the file. Run this command in your local repo.
 ```bash 
 touch README.md # This would create a file with the name README.md
 ```
 
-Add something to the file with the editor of your choice then run the command 
+Add something to the file with the editor of your choice (notepad works) then run the command
 ```bash 
 git add README.md # this would add the file changes to the stage environment
 ```
@@ -62,47 +62,49 @@ git status
 ```
 
 >[!note]
->Note when running `git add .` you may have added file that you do not want to commit if so add a `.gitignore` file in the repo. Then add the the name of files you do not want to be added to the stage environment in the `.gitignore` file. 
+>Note when running `git add .` you might  add files that you do not want to commit. If this happens, add a `.gitignore` file in the repo using the `touch` command as used in previous examples. Then, using a text editor, add the the name of files you do not want to be added to the stage environment in the `.gitignore` file. 
 
 2. After staging all the files we can now commit the change
 ```bash 
 git commit -m "some message goes here"
 ```
-> People often get confuse with the `git commit` command, what commit do is that it create a point in history of the changes you have made in which you can view all the commits that have been made using `git log`. And let say you accidentally stage a change to a file you did not meant to make using the `git add` command you can then revert the change using `git restore` to revert the file to its last commit. Git will generally tell you how to revert the change when you run `git status`. Normally it will probably be something like this: 
+> People* often get confused with the `git commit` command. All commit does is create a point in history of the changes you have made at which you can view all the commits that have been made using `git log`. <br>
+> Let's say you accidentally stage a change to a file you did not mean to make using the `git add` command. In such a case, you can then revert the change using `git restore` to revert the file to its last commit. Git will generally tell you how to revert the change when you run `git status`. Normally it will probably be something like this: 
 > 1. `git restore --staged [file_name]` 
 > 2. `git restore [file_name]`
 >> Run both command in the order that is listed above
+>> > * Editor's Note: The writer is talking about me. He has never known anyone else to actually have difficulty with understanding commit. I am a certified idiot.
 
 ## Branching
 
-Branching is of most utmost importance when it comes to git. Generally, we do not want to make changes directly to the main(sometimes called master) branch since that branch will contain our most stable builds and deployment-ready build. So we would create a new branch off of the main branch or do a fork(covered later). The new branch will be based off of the latest commit that has been made to the main branch at the time the new branch was create; in other words you can have multiple branches off of the main branch at different commit history. 
+Branching is of most utmost importance when it comes to Git. Generally, we do not want to make changes directly to the main(sometimes called master) branch since that branch should contain the most stable build and deployment-ready build. The main branch should ideally be the version the public is using. Due to this, when making any changes, we should create a new branch off of the main branch or perform a fork(covered later). The new branch will be based off of the latest commit that has been made to the main branch at the time the new branch was create; an effect of this is that you can have multiple branches off of the main branch at different points in the commit history log.
 - This allows us to make any changes we want without modifying the content within main/master branch. 
 	- Useful when we want test a new feature we would like to implement to the main branch.
-	- And when we want to implement those feature to the main/master branch we can just do a merge.
+	- When we want to implement those feature to the main/master branch we can just do a merge.
 >When creating a new branch, the new branch is based off of the current branch you are in and contains all the files of the current branch and its commit history. The new branch also does not have to be based off of the main branch.
 1. To create a new branch run these command in your local repository
 ```bash
 git branch [new_branch_name]    # create the new branch if it didn't already exist
 git checkout [new_branch_name]  # switch to the new branch
 ```
-> This will create a branch based off of the current branch you are in. You can also use `git switch` instead of `git checkout` they essentially do the same thing if no unique flags are given. `git switch` is basically a split off command of the `git checkout` command. To further understand these two commands I recommend reading the official git documentation for [switch](https://git-scm.com/docs/git-switch) and [checkout](https://git-scm.com/docs/git-checkout). 
+> This will create a branch based off of the current branch you are in. You can also use `git switch` instead of `git checkout`. They essentially do the same thing if no unique flags are given. `git switch` is basically a split off command of the `git checkout` command. To further understand these two commands I recommend reading the official git documentation for [switch](https://git-scm.com/docs/git-switch) and [checkout](https://git-scm.com/docs/git-checkout). 
 
 >[!tip]
 >You can simplify the process of creating a branch and switching to the branch in one terminal line command. Simply run 
 >- `git checkout -b [new_branch_name]` or
 >- `git switch -c [new_branch_name]`
->> Both command will create and switch to the newly created branch
+>> Both commands will create and switch to the newly created branch
 >
->If you want to create a branch based off of another branch and not the current branch you're in then run 
+>If you want to create a branch based off of another branch that you are not currently in then run 
 >- `git checkout -b [new_branch_name] [name_of_another_branch]`
 >
 >To create an completely empty branch run 
 >- `git switch --orphan [new_branch_name]`
->	- This would create a branch with no files or folders except for the one git does not track
+>	- This would create a branch with no files, folders or commit history, except for changes that git has not yet tracked (due to the changes not yet being committed)
 
 
 
-> To see all existing branch simply run `git branch` and to remove a branch run `git branch -d [name_of_the_branch]`
+> To see all existing branches, simply run `git branch`. To remove a branch, run `git branch -d [name_of_the_branch]`
 
 Now let suppose we edit our README.md in our newly created branch. This change is only present within the newly created branch and not the main branch. If we want to integrate the changes to the main branch we would do a merge on the main branch
 1. First change back to the main branch 
@@ -116,7 +118,7 @@ git merge [name_of_the_other_branch]
 > This would update the main branch content to match the newly created branch
 
 >[!info]
->There are other ways to merge two branch together such as `git rebase` but on the most basic level a `git merge` would do since that is the one people understand the most. Also, although it is called `merge` they do not actually merge together into one branch, the branch that you did the merge from still exist and you can still work on that branch. All `git merge` do is integrate changes from one branch on to your current branch
+>There are other ways to merge two branches together such as `git rebase`, but on the most basic level a `git merge` works well and people understand it the best. Do note, although it is called `merge` they do not actually merge together into one branch. The branch that you did the merge from still exists and you can still work on that branch. All `git merge` does is integrate changes from one branch on to your current branch
 
 To merge main branch content on to another branch, let say someone did a commit to the main branch and you want to see if that commit still works with the feature you are working on in the current branch, you would do the exact same step as above but instead being in the main branch you would just be in the current branch you are working on and do a `git merge [name_of_the_main_branch]`. 
 - You can also do a merge between two branches that is not the main branch
