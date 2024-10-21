@@ -9,9 +9,9 @@
 >	- This would be `false`. 6 is not less than 4
 >- There exists some integer x such that x > 2
 >	- This would be `true`. There does exist some integer (labeled x) that is greater than 2
->> A statement can also involve future tense word so if the statement is: 
+>> A statement can also involve the future tense so if a statement is: 
 >> - Tommy will get an A in his next exam. 
->> 	- This is an statement we just don't know if it's `true` or `false` yet. 
+>> 	- This is a statement, we just don't know if it's `true` or `false` yet. 
 
 >[!note]
 >If the sentence contains any "ambiguous" words such as "she, he, they or them", they are not statement. The words must be specific. 
@@ -55,37 +55,39 @@
 >>>		- $$(p \wedge q) \vee r$$, is a valid statement. 
 >>>		- $$p \wedge q \wedge r$$, is also a valid statement since all the connectivity are the same.
 ## Translating English into Logic 
-When we are given an English statement we break the statement into parts and assign an variable to each parts then connect the parts together with a logic connectivity.
-- Given these statements, we will translate them into logics: 
+When we are given an English statement, we break the statement into parts and assign a variable to each part then connect the parts together with a logic connectivity.
+- We will translate the given statements into "logic": 
 	- "Tommy likes oranges and apples"
 		- Let p = `Tommy likes oranges` and q = `Tommy likes apples`
 			- $$p \wedge q$$
 	- "Fruits are healthy but snacks are not"
-		- Let p = `fruits are health`y and q = `snacks are healthy` 
+		- Let p = `fruits are healthy` and q = `snacks are healthy` 
 			- $$p \wedge \sim q$$
 	- Either Jim is sleepy or Jim is tired
 		- Let p = `Jim is sleepy` and q = `Jim is tired`
 			- $$p \vee q$$
 	- Neither Jim nor Timmy are sleeping 
 		- Let p = `Jim is sleeping` and q = `Timmy is sleeping`
+		- Note: Either of the two notations work here, they are equivalent. See [[Law-of-Equivalance.png|Laws of Equivalence]] 
 			- $$ \sim p \wedge \sim q$$ or
 			- $$\sim (p \vee q)$$
 	- Neither Jim nor Timmy are angry but Tommy is. 
 		- Let p = `Jim is angry` and q = `Timmy is angry` and r = `Tommy is angry`
 			- $$\sim p \wedge \sim q \wedge r$$
 ## Truth Table 
-- Determines whether or not a statement is `true` or `false` under every possible interpretations. 
+- Determines whether or not a statement is `true` or `false` under every possible interpretation. 
 	- We would use `T` for `true` and `F` for `false`.
-	- Or in binary `1` would be `true` and `0` would be `false`.
+	- If we use binary, `1` would be `true` and `0` would be `false`.
 	
 - ### Interpretation
-	- Each row of a truth table represent an interpretation.
-	- An Interpretation is basically assigning a `true` or `false` value for each variable.
+	- Each row of a truth table represents an interpretation.
+	- An Interpretation is basically a combination of assignments of either `true` or `false` value for each variable.
 		- For example, suppose we have variable ***p*** and ***q***.
 			- One interpretation can be ***p*** is `true` and ***q*** is `false`.
-		- Given an Interpretation we can evaluate whether or not that statement is true under that specific interpretation, this is known as **"truth valuation"**.
-			- Suppose ***p*** and ***q*** is connected by `and` connectivity, so $$p \wedge q$$
+		- Given an Interpretation we can evaluate whether or not a statement is true under that specific interpretation, this is known as **"truth valuation"**.
+			- Suppose ***p*** and ***q*** is connected by `and`, so $$p \wedge q$$
 			- Under the interpretation above this statement would be `false` since ***p*** is `true` and ***q*** is `false`. 
+			- 
 >[!tip]-
 >- The only time that a statement connected by only $$\wedge$$ is true is if all the variables are true
 >- The only time that a statement connected by only $$\vee$$ is false is if all the variables are false
@@ -104,7 +106,7 @@ When we are given an English statement we break the statement into parts and ass
 Two statements are considered logically equivalent if they have the same truth value under every possible interpretation. 
 - $$q \equiv \sim \sim q$$
 >[!info]
->The symbol $$ \equiv $$ means "equivalent" or "congruent" even though there is another symbol for congruent which is this one $$ \cong $$ but for sake of this course the symbol $$ \equiv $$ means both. Also note, that symbol does NOT mean "equal to". "Equivalent" and "congruent" is the NOT same as "equal to". 
+>The symbol $$ \equiv $$ means "equivalent" or "congruent". Do note that  there is another symbol that specifically means "congruent" which is $$ \cong $$ but for sake of this course the symbol $$ \equiv $$ means both equivalent and congruent. Also note, that neither symbol means "equal to". "Equivalent" and "congruent" is the NOT same as "equal to". 
 
 To check whether or not two statements are equivalent you can always write out a truth table. 
 - But as you progress in this course you will starts to notice that it is very tedious to write out a truth table every time. 
@@ -121,10 +123,11 @@ A statement is called a contradiction if they are `false` under every possible i
 
 
 ## Laws of Equivalence
-We can use the laws of equivalence to simplify statement 
+We can use the laws of equivalence to simplify statements
 ![[Law of Equivalance.png]]
 > [!example]-
 > Given the statement: $$\sim (\sim p \wedge q) \wedge (p \vee \sim q)$$
+> We can simplify this statement to a more readable one using the following steps:
 > - Simplification Steps: 
 > 	- Apply DeMorgan Law 
 > 		- $$(\sim \sim p \vee \sim q) \wedge (p \vee \sim q)$$
@@ -133,7 +136,7 @@ We can use the laws of equivalence to simplify statement
 > 	- Apply Idempotent Law 
 > 		- $$ (p \vee \sim q)$$ 
 
-We can also used Laws of Equivalence to show if two statement are equivalent to each other
+We can also use Laws of Equivalence to show if two statement are equivalent to each other
 
 >[!example]-
 >Given the statement: $$\sim(p \vee \sim q) \vee (\sim q \wedge \sim p)$$ show that is it equivalent to $$\sim p$$
@@ -153,23 +156,24 @@ We can also used Laws of Equivalence to show if two statement are equivalent to 
 
 ## Implications (Conditional Statement)
 Implication is defined with an arrow $$\implies$$.
- In English translation that means "implies" or an "if then" statement in programming. 
+ In plain English that means "implies". In programming, its akin to an "if then" statement.
  - So if we have the statement $$ p \implies q$$
-	 - In the English that means "p implies q" or "if p then q" 
+	 - In English that means "p implies q" or "if p then q" 
 	 - Using the definition of arrow$$(\implies)$$above in the laws of equivalence chart it is equivalent to $$ \sim p \vee q$$
-> For some reason in LaTex notation the arrow looks different from the one shown in the Laws of Equivalence chart. You do not have to use the funky looking arrow you can just use the normal arrow shown in the Laws of Equivalence. 
+> For some reason in the Latex notation this site uses, the arrow looks different from the one shown in the Laws of Equivalence chart. You do not have to use the funky looking arrow. You can just use the normal arrow shown in the Laws of Equivalence picture.
 
 >[!note]
 >The arrow $$\implies$$ has a lower precedence than $$\vee$$ and $$\wedge$$
 >> So if we have the statement $$ p \wedge q \implies r$$
 >> - You would do the "and" first then the "arrow" so you can look at it as: $$ (p \wedge q) \implies r$$
 
-When drawing truth table for implication, the only interpretation that makes the arrow `false` is if the left hand side of the arrow is `true` but the right hand side is `false`. However, if the left hand side of the arrow is `false` then we do not care if the right hand side is `true` or `false` so the statement is automatically `true` because if the left hand is `false` then it may or may not imply the right hand side. 
-- If you think about it for a second it makes sense, the arrow mean implication so if "p implies q", meaning if p is `true` then it must mean that q is `true` for the statement to be `true` , however, if p is `true` and q is `false`, then that statement is `false`. Respectively, if p is `false` then we do not care if q is `true` or `false` the statement is `true` either way.
-	- An example can be, using English, "If the floor is wet then the floor is slippery".
-		- The only time that statement is `false` is if the floor is wet but the floor is not slippery.
-		- If the floor is not wet then we do not care if it is slippery so the statement is `true` because if the floor is not wet then it may or may not imply that it is slippery. 
-> When translating implication into logic is the same thing as breaking the statement apart and assign a variable to each parts. Example: "If the floor is wet then the floor is slippery"
+When drawing a truth table for implication, the only interpretation that makes the arrow `false` is if the left hand side of the arrow is `true` but the right hand side is `false`. However, if the left hand side of the arrow is `false` then we do not care if the right hand side is `true` or `false`.The statement is automatically `true`.
+- For further justification, the arrow represents implication. Imagine the statement "p implies q". If p is `true` then it must mean that q is `true` for the statement to be `true`, however, if p is `true` and q is `false`, then that statement is `false`. Respectively, if p is `false` then we do not care if q is `true` or `false` the statement is `true` either way.
+	- As an consider the statement, "If the floor is wet then the floor is slippery".
+		- The only time the statement is `false` is if the floor is wet but the floor is not slippery.
+		- If the floor is not wet then we do not care if it is slippery. The statement is `true` because if the floor is not wet then it may or may not imply that it is slippery. 
+> When translating implication into logic, the follow the same steps of breaking the statement apart and assign a variable to each parts.
+>  Example: "If the floor is wet then the floor is slippery"
 > - Let p = `floor is wet` and q = `floor is slippery`
 > 	- $$p \implies q$$
 
@@ -198,4 +202,6 @@ Converse means you flip them, inverse means you negate both, contrapositive mean
 > - The converse is equivalent to the inverse
 > 
 > You can draw out a truth table for each one to confirm it yourself but I am too lazy to do one.
+> 
+> Editor Note: What the bossman said. I don't wanna write a table either. Latex is pain.
 
