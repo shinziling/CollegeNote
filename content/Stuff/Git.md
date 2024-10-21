@@ -368,6 +368,12 @@ Now pull request is not a git feature it is feature in which git hosting service
 > >[!note]
 > >
 > >Note everything here is in regards with personal repository. Github also have something called organization and repository that belongs to an organization works differently from a personal repository since an organization support a feature called teams each teams performs a specific role in the organization but an organization repo can also have collaborator. However, a pull request still works the same. 
+>
+>You can merge commit between branch however you want in your local repository for testing purpose and it is generally recommended you do your own testing first before opening a pull request.
+>
+> >[!note]
+> >
+> >Note everything here is in regards with personal repository. Github also have something called organization and repository that belongs to an organization works differently from a personal repository since an organization support a feature called teams each teams performs a specific role in the organization but an organization repo can also have collaborator. However, a pull request still works the same. 
 ## Forking
 
 If you are not an collaborator for an repo then you do not have any direct access to the repo itself and cannot open branch directly on the repo. However, you can fork the repo into your own repo as long as the repo you are trying to fork is public(after all you can't see a private repo) .<br>
@@ -384,7 +390,7 @@ The forked repo is also linked to the original repo so you can also make pull re
 # Other Useful Git Feature
 
 ## FETCH_HEAD
-When you do a `git fetch` such as `git fetch [remote_name] [remote_branc]` a temporary FETCH_HEAD branch will be created referencing the latest fetched commit. <br> 
+When you do a `git fetch` such as `git fetch [remote_name] [remote_branch]` a temporary FETCH_HEAD branch will be created referencing the latest fetched commit. <br> 
 We can then switch to the FETCH_HEAD using:
 ```bash 
 git checkout FETCH_HEAD
