@@ -139,7 +139,7 @@ We can use the laws of equivalence to simplify statements
 We can also use Laws of Equivalence to show if two statement are equivalent to each other
 
 >[!example]-
->Given the statement: $$\sim(p \vee \sim q) \vee (\sim q \wedge \sim p)$$ show that is it equivalent to $$\sim p$$
+>Given the statement: $$\sim(p \vee \sim q) \vee (\sim q \wedge \sim p)$$ show that it is equivalent to $$\sim p$$
 >- Steps(I will be combining some steps together because it is tedious to type everything out): 
 >	- Apply DeMorgan Law
 >		- $$(\sim p \wedge \sim \sim q) \vee (\sim q \wedge \sim p)$$
@@ -172,7 +172,7 @@ When drawing a truth table for implication, the only interpretation that makes t
 	- As an consider the statement, "If the floor is wet then the floor is slippery".
 		- The only time the statement is `false` is if the floor is wet but the floor is not slippery.
 		- If the floor is not wet then we do not care if it is slippery. The statement is `true` because if the floor is not wet then it may or may not imply that it is slippery. 
-> When translating implication into logic, the follow the same steps of breaking the statement apart and assign a variable to each parts.
+> When translating implication into logic, they follow the same steps of breaking the statement apart and assign a variable to each parts.
 >  Example: "If the floor is wet then the floor is slippery"
 > - Let p = `floor is wet` and q = `floor is slippery`
 > 	- $$p \implies q$$
