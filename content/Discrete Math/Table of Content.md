@@ -20,7 +20,8 @@ It is similar to an introductory math proof course but is specifically tailored 
 >- Rational Numbers$$(\Bbb{Q})$$
 ## Course Content: 
 
-- [[Propositional Logic]]
+- [[Unit 1 Propositional Logic]]
+- [[Unit 2 Digital Circuit]]
 - [[Useful Theorem & Definition]]
 - [[Logic Rules]]
 
