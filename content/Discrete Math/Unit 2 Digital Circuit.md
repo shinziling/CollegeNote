@@ -91,10 +91,28 @@ So, instead of using a truth table we do the normal way of adding vertical. It i
 | :----------: | :-: | :-: | :-: | :-: | :-: |
 >Answer : 11011
 
+## Half-Adder, Full-Adder and Parallel-Adder
+
+A half-adder is a circuit used to add two bits together. But here it is: (Note: All pictures are taken from my professor slide) 
+![[Half-Adder.png]]
+
+A full-adder uses two half-adders to add three bits together. 
+
+![[full-adder.png]]
+
+A parallel-adder is when you are doing operands with $k$-bit, where $k$ is the number of bits. It uses a combination of half-adder and full-adder. 
+
+- When adding 2 $k$-bit number together, the number of inputs is always $2k$ and the number of outputs is always $k+1$. 
+	- For example, consider a 3 bit operands. The number of inputs is 6 and the number of outputs is 4. Here is an picture from my professor slide.
+![[parallel-adder.png]]
+>[!tip]
+>- The amount of half-adder for any $k$-bit operands is always 1
+>- The amount of fuller-adder for any $k$-bit operands is always $k-1$
+>- The amount of outputs for any $k$-bit operands is always $k+1$
+>
 
 ## Converting Binary to Base 10 and Vice Versa
 Okay, you should know how to do this but I will briefly go over it. You also don't need to know any other base other than 2 or 10. 
-
 - Binary to Base 10 is simple:
 	- Take a binary number multiply each bit with it corresponding place value which is $2^{n}$, where $n$ is the place value. Then add them up. Note: the first place value is 0. 
 		- For other base you do the same thing but instead of a 2 it would be whatever base you are using. 
