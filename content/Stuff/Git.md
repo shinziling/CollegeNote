@@ -313,11 +313,11 @@ git pull [remote_name] [remote_branch]
 
 ### Git push 
 
-Now here comes the fun part after we made our commits/changes we would like to push the commits/changes to the remote repo for other to see and pull from. 
+Now here comes the fun part, after we made our commits/changes we want to push the commits/changes to the remote repo for other to see and pull from. 
 
 > New commits and changes are made when `git commit -m "some message goes here"` is performed. But remember to commit something you must first stage a change using `git add .` or `git add [file_name]`
 
-To push to a specified remote 
+To push to a specified remote, use
 ```bash 
 git push [remote_name]
 ```
@@ -331,8 +331,8 @@ git push [remote_name] [local_branch_name]:[remote_branch_name]
 ```
 >[!info]
 >Differences between the three commands
->1. The first command will try to push the commits/changes to a remote branch that the current branch is tracking if the current branch is not tracking any remote branch then this command does nothing.
->		- This command would also fail if the tracked remote branch name is different from the current branch name even if the current branch is tracking that branch.\
+>1. The first command will try to push the commits/changes to a remote branch that the current branch is tracking. If the current branch is not tracking any remote branch then this command does nothing.
+>		- This command would also fail if the tracked remote branch name is different from the current branch name even if the current branch is tracking that branch.
 >		- Now here is confusing part if the tracked remote branch that the current branch is tracking does not exist on the specified remote then git will actually create a new remote branch on that specified remote based off of the current branch. But why it does this? Well, I don't exactly know why.
 >1. The second command will try to push any new commits/changes made on that local branch to the remote repo assuming no merge conflict happen. However two cases can happen
 >		1. If there is a remote branch with the same name as the local branch it will try to push the new commits/changes to that remote branch
