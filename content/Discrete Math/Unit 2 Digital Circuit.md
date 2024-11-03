@@ -103,7 +103,7 @@ A full-adder uses two half-adders to add three bits together.
 A parallel-adder is when you are doing operands with $k$-bit, where $k$ is the number of bits. It uses a combination of half-adder and full-adder. 
 
 - When adding 2 $k$-bit number together, the number of inputs is always $2k$ and the number of outputs is always $k+1$. 
-	- For example, consider a 3 bit operands. The number of inputs is 6 and the number of outputs is 4. Here is an picture from my professor slide.
+	- For example, consider a 3 bit operands. The number of inputs is 6 and the number of outputs is 4. Here is a picture from my professor slide.
 ![[parallel-adder.png]]
 >[!tip]
 >- The amount of half-adder for any $k$-bit operands is always 1
