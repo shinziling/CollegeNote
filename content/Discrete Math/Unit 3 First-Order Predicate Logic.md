@@ -26,7 +26,7 @@ Definition:
 
 ### Quantified Statement
 
-Combining predicate and quantifiers, we can create a quantified statement.
+Combining predicate(s) and quantifier(s) (as well as some domains), we can create a quantified statement.
 - $(\forall x \in \Bbb {Z})[P(x)]$
 	- This means "for all integer x, P(x) holds or P is true about x"
 - $(\exists x \in \Bbb {Z}) [R(x)]$
@@ -34,7 +34,7 @@ Combining predicate and quantifiers, we can create a quantified statement.
 
 ### Variable Scope for Quantified Statement
 
-This is similar to block scope in programming where variable are bounded to a predicate or predicates. Think global variable and local variable. The scope of the variable in a quantified statement is determined by the set of bracket that comes after the variable domain.
+This is similar to block scope in programming where variables are bounded to a predicate or predicates. Think global variable and local variable. The scope of the variable in a quantified statement is determined by the set of bracket that comes after the variable domain.
 - The bracket is not an official way to determine variable scope, it actually depends on the context since different individuals, professors, and textbooks have different ways of expressing variable bound. 
 	- Some just write out in plain English, some don't use bracket at all. 
 
@@ -183,7 +183,7 @@ Applying an interpretation means assigning a domain to each variable(s) and a me
 >
 >1. Statement. Both variables are bounded to all real numbers and we are assuming the predicate has a meaning assigned to it
 >2. Neither. Although the first x is bounded to all natural numbers and the second x is a free variable that is not bounded to anything and does not have a quantifier (See [[#Variable Scope for Quantified Statement|Variable Scope]]).
->3. Statement. Variable y is bounded and has a quantifier. 2.7 is a real number that is assigned to the predicate itself. 
+>3. Statement. Variable y is bounded and has a quantifier. 2.7 is a real number that is passed into the predicate itself. 
 >4. Sentence. The first y is bounded and with a quantifier. The second y has a quantifier but it is not bounded to any domain (See [[#Variable Scope for Quantified Statement|Variable Scope]]).
 
 
