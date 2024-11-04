@@ -48,7 +48,10 @@ At the end of the day when writing in mathematical notation you want to be as cl
 >- $(\forall x \in \Bbb {N}) [P(x) \wedge T(x)] \vee (\forall x \in \Bbb {R}) [R(x)]$
 >>[!success]- Solution
 >>
->>Although there are two $x$'s, they are entirely different. The first $x$ is bounded to P and T but the second one is bounded to R. When you write, please don't do this, it makes it confusing to follow your work. Use different variables for each one. 
+>>Although there are two $x$'s, they are entirely different. The first $x$ is bounded to P and T but the second one is bounded to R. When you write, please don't do this, it makes it confusing to follow your work. Use different variables for each one.  
+>>
+>>Editor's Note: $x$ is $x$ and $x$ is $x$ but $x$ is not $x$ and $x$ should not be confused with $x$. Every time you utilize the accursed second $x$, I succumb deeper into this madness. Please have mercy on my poor soul. Also, I deserve time off
+
 
 ## Vacuous Statement
 These are statements that we just say are true or false, regardless of the value of the variable (It just works).<br>
