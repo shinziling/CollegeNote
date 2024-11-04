@@ -186,5 +186,3 @@ Applying an interpretation means assigning a domain to each variable(s) and a me
 >3. Statement. Variable y is bounded and has a quantifier. 2.7 is a real number that is passed into the predicate itself. 
 >4. Sentence. The first y is bounded and with a quantifier. The second y has a quantifier but it is not bounded to any domain (See [[#Variable Scope for Quantified Statement|Variable Scope]]).
 
-
-

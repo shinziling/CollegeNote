@@ -23,6 +23,7 @@ It is similar to an introductory math proof course but is specifically tailored 
 - [[Unit 1 Propositional Logic]]
 - [[Unit 2 Digital Circuit]]
 - [[Unit 3 First-Order Predicate Logic]]
+- [[Unit 4 Methods of Proof]]
 - [[Useful Theorem & Definition]]
 - [[Logic Rules]]
 

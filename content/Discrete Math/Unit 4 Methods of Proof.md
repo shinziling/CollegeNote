@@ -1,0 +1,188 @@
+
+# Definition of Common Domain
+
+- $\Bbb {R}$ - All real numbers
+- $\Bbb {Z}$ - All integers
+- $\Bbb {Q}$ - All rational numbers, where $\dfrac {a}{b}$ where $a, b \in \Bbb {Z}$ and $b\neq 0$
+- $\Bbb {N}$ - All natural numbers, 0 is counted 
+
+>Note: 0 is not positive or negative. 0 is an even number.
+
+
+Irrational Number: 
+- The formal way to denote irrational number is $\Bbb {R} - \Bbb {Q}$, this means take the set of all real numbers and subtract the set of all rational numbers and you end up with only irrational numbers. 
+	- Sometimes it is denoted as $\Bbb {I}$ (Not formal mathematical notation). 
+
+We can also restrict the domain:
+- $\Bbb {R}^{+}$ - all positive real numbers
+- $\Bbb {Z}^{even}$- all even integers.
+- $\Bbb {N}^{prime}$- all prime natural numbers
+-  $\Bbb {Q}^{>2}$- all rational numbers greater than 2
+
+
+# Closure
+
+If you take two or more elements of a certain domain (D) and apply a operation (subtracting, adding, multiplying, etc) and the result is still part of that domain (D) then D is close under that operation.
+
+>[!example]
+>- $\Bbb {Z}$ is close under subtraction, take any integers and subtract them you would get another integer. If we restrict this to only positive integer then it is not close under subtraction since you can take two positive integers and subtract them, you would sometimes get a negative integer.
+>- Is $\Bbb {R}$ close under exponentiation?
+>>No, $-2^{1/2}$ is an imaginary number
+
+
+# Number Theory
+
+This is the study of the properties of Natural Numbers
+- Perfect for writing proofs
+
+It is used in a lot of Computer Science fundamentals
+
+# Divisibility, and Factors 
+
+Notation for divisibility is the vertical bar $|$ 
+- $a|b$ means "a divides b" or
+	- "a is a factor of b"
+	- "b is divisible by a"
+
+>[!success] Formal Definition : $(\exists a, b, m \in \Bbb {N}) [a|b \leftrightarrow b = am]$
+
+# Universal Generalization
+
+This is one of the most important rules of inference that we used for this course. This involves all claims with universal quantifier.
+
+Given a claim: $(\forall x \in D) [P(x)]$
+- We select an arbitrarily element from the domain (D) then prove that $P(x)$ holds for the that arbitrarily element. Since the element was selected arbitrarily it means $P(x)$ holds for all elements in domain (D). See [[Fun Proof]] for some examples on using Universal Generalization
+
+>[!info] Writing Proofs 
+>
+>- Start off with the claim at the beginning, then the proof. The beginning of the proof should start by saying some arbitrarily element in the domain. Clearly end the proof with some symbol such as a square.
+>>$Claim: (\forall x \in D) [P(x)]$
+>>$Proof:$ let $a \in D$, selected arbitrarily
+>>........ $P(a)$ holds $\therefore (\forall x \in D)[P(x)] \blacksquare$
+>
+>- Each step must follow logically.
+>- Justification for each step should be clear.
+>
+>> There are multiple ways to state a claim. You can write out plain English if you want.
+
+> There are other rules of inference such as universal instantiation, existential generalization, and existential instantiation but these ones are not useful. You would probably use them instinctively in your proof anyways without realizing. 
+# Even and Odd Definition (formal)
+
+Definition for a even number: 
+- $n \in \Bbb {Z}$ is even $\leftrightarrow (\exists k \in {Z})[n = 2k]$
+
+Definition for a odd number: 
+- $n \in \Bbb {Z}$ is odd $\leftrightarrow (\exists k \in {Z})[n = 2k +1]$
+
+# Constructive Proof
+
+Proof that involve using one example to prove a claim. These involves claim with existential quantifier. 
+
+>[!example]
+>$Claim : (\exists a, b, c \in \Bbb {Z}) [a^2 + b^2 = c^2]$
+>$Proof :$ Let a = 3, b = 4 and c = 5
+>$a^2 + b^2 = 9 + 16 = 25 = c^2$
+>$\blacksquare$ 
+
+
+>[!note] Counterexample
+>
+>If you think a claim is false. Provide an example to show it. This means assign some values and show the claim is false. 
+>- Generally speaking, it is easy to disprove an universal quantifier since you just have to find one example in which the proposition (statement) does not hold but hard to disprove an existential quantifier because you have to prove the proposition does not hold for all elements in the domain. 
+
+
+# Proof by Exhaustion (Brute Force)
+
+Proof by exhaustion is basically you take all possible cases of a claim and prove that each cases work. Hence, you exhaust all possible cases therefore the claim holds true.
+- Very boring proof. However, sometimes it is easier to break a claim into multiple cases.
+
+>[!note] Proof by Computer
+>You can use a computer program to prove a claim. As a matter of fact some claims were proven using computer programs. 
+
+# Proof by Contradiction
+Sometimes it is hard to prove a claim directly, so instead we negate the claim and if the proof leads to a contradiction then the original claim must be true. 
+
+
+>[!info]
+>
+>$Claim :$ $p$
+>$Proof :$ 
+>- Assume $\neg p$
+>	- .... leads to a contradiction
+>- therefore, $p$.
+# Proof involving Implications $(\to)$
+
+Claim involving implication generally goes something like this: if something then something else. 
+- When proving claim with implication we assume the LHS is true and try to derive the RHS. 
+	- We can use our assumption to help derive the RHS.
+
+>Why assume the LHS? Because what is the point of proving a claim if the LHS is false. If the LHS is false then the statement is automatically true. 
+
+>[!info]
+>
+>$Claim :$ If $p$ then $q$
+>$Proof :$ 
+>- Assume $p$ 
+>	- derive $q$
+>- Therefore, $p \to q$
+
+
+## Proof by Contraposition
+Recall that a statement with implication is equivalent to its contrapositive. Sometimes it is hard to prove the original statement so instead we prove its contrapositive. 
+
+>[!info]
+>
+>$Claim :$ If $p$ then $q$
+>$Proof :$ Prove by Contraposition
+>- Assume $\neg q$ 
+>	- derive $\neg p$
+>- Therefore, $p \to q$
+
+## Contradiction with Implication
+
+This is also valid. 
+
+>[!info]
+>
+>$Claim :$ If $p$ then $q$
+>$Proof :$ 
+>- Assume $p$
+>	- Suppose by the way of contradiction (BWOC), assume $\neg q$
+>	- ...... leads to a contradiction 
+>	- therefore $q$.
+>- Therefore, $p \to q$
+
+# Proof by Equivalence $(\leftrightarrow)$
+
+Two methods to do this
+
+Method 1: We can either just go down one by one: 
+
+>[!info]
+>
+>$Claim :$ $p$ if and only if $q$
+>$Proof :$ 
+>- $p \leftrightarrow s1$
+>	- $\leftrightarrow s2$
+>	- $\leftrightarrow s3$
+>	- $\leftrightarrow s4$
+>	- $\leftrightarrow q$
+>- Therefore $p \leftrightarrow q$
+
+>Problem with the method above: 
+>- It does not always works
+>- It must work backward (Sometimes it works forward but not backward)
+>- Easy to make mistake
+
+
+Method 2: The second method will always work. Basically, we break it into two parts. Assume the LHS then derive the RHS (part 1) and then assume the RHS then derive the LHS (part 2).
+
+>[!info]
+>
+>$Claim :$ $p$ if and only if $q$
+>$Proof :$ 
+>- Part I : show $p \to q$
+>	- ....
+>- Part II : show $q \to p$
+>	- ....
+
