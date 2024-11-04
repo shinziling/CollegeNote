@@ -13,7 +13,7 @@ It is similar to an introductory math proof course but is specifically tailored 
 	- This is a particularly an important concept when it comes data structure in Computer Science since all data structure are discrete. 
 >[!example|purple]- Examples of Discrete Structure
 >- Integers$(\Bbb{Z})$
->- Natural Numbers$(\Bbb{N})$
+>- Natural Numbers$(\Bbb{N})$, 0 will be counted as a natural number
 
 >[!example|purple.red]- Examples of Continuous Structure
 >- Real Numbers$(\Bbb{R})$
@@ -22,6 +22,7 @@ It is similar to an introductory math proof course but is specifically tailored 
 
 - [[Unit 1 Propositional Logic]]
 - [[Unit 2 Digital Circuit]]
+- [[Unit 3 First-Order Predicate Logic]]
 - [[Useful Theorem & Definition]]
 - [[Logic Rules]]
 
