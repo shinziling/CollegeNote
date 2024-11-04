@@ -14,6 +14,3 @@ I will post some examples of proof here and some challenging ones from my profes
 
 
 
-
-
-
