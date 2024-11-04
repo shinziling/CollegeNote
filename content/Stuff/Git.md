@@ -1,5 +1,5 @@
 # What is Git?
-Git is an open source version-control system(VCS) used to help manage code and files for a specific project.
+Git is an open source version-control system (VCS) used to help manage code and files for a specific project.
 - Often used in a collaboration environment where multiple people are working on the same project.
 - Some cloud-based platforms such as Github or Gitlab allow the usage of git to backup the project to a user repository on their website.  
 # Getting Started

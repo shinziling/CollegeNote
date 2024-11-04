@@ -1,9 +1,9 @@
-A predicate is an expression that is either `true` or `false`. This depends on the value that is substituted for the variable. When defining a predicate the domain must also be specified. 
-- A predicate is not a statement. But we can transform predicate into quantified statement. But for now this is an predicate: 
+A predicate is an expression that is either `true` or `false`. The truth of a predicate depends on the value of a variable contained within the predicate. When defining a predicate, the domain must also be specified. 
+- A predicate is not a statement. However, we can transform a predicate into a quantified statement. More on that later, but take the following example of a predicate: 
 	- $P(x)$ = "x is odd", where x is an integer ($\Bbb{Z}$)
 > Observe that we defined the predicate and the domain of x.
 
-The domain of the variable does not have to be just numbers and we can also have multiple variables in a predicate.
+The domain of the variable does not have to be just numbers. We can also have multiple variables in a predicate.
 
 >[!example]
 >
@@ -17,8 +17,8 @@ Logic connectivity can be used to connect different predicates together
 
 ## Quantifiers (Universal and Existential)
 
-There is two types of quantifiers: Universal $(\forall)$ and Existential $(\exists)$
-- They are the negation of each other so negating $\forall$ becomes $\exists$ and vice versa
+There are two types of quantifiers: Universal $(\forall)$ and Existential $(\exists)$
+- They are negations of each other, so negating $\forall$ becomes $\exists$ and vice versa
 
 Definition: 
 - $\forall$ means "for all" or "for every". 
@@ -28,17 +28,17 @@ Definition:
 
 Combining predicate(s) and quantifier(s) (as well as some domains), we can create a quantified statement.
 - $(\forall x \in \Bbb {Z})[P(x)]$
-	- This means "for all integer x, P(x) holds or P is true about x"
+	- This means "for all integers x, P(x) holds or P is true about x"
 - $(\exists x \in \Bbb {Z}) [R(x)]$
 	- This means "there exists a integer x (at least one) such that R(x) holds or R is true about x"
 
 ### Variable Scope for Quantified Statement
 
-This is similar to block scope in programming where variables are bounded to a predicate or predicates. Think global variable and local variable. The scope of the variable in a quantified statement is determined by the set of bracket that comes after the variable domain.
-- The bracket is not an official way to determine variable scope, it actually depends on the context since different individuals, professors, and textbooks have different ways of expressing variable bound. 
+This concept similar to block scope in programming. Variables are bounded to a predicate or predicates. Think of global variables and local variables. The scope of the variable in a quantified statement is determined by the set of brackets that comes after the variable's domain.
+- The bracket is not an official way to determine variable scope. Rather it actually depends on the context of the problem since different individuals, professors, and textbooks have different ways of expressing variable bounds. 
 	- Some just write out in plain English, some don't use bracket at all. 
 
-At the end of the day when writing mathematical notation you want to be as clear as possible. But for now the bracket is there to help understand mathematical logic.
+At the end of the day when writing in mathematical notation you want to be as clear as possible. But for now the brackets are there to help you understand mathematical logic.
 
 >[!example]
 >- $(\forall x \in \Bbb {N}) [P(x)] \wedge (\forall y \in \Bbb {Z}) [R(y)]$
@@ -48,16 +48,16 @@ At the end of the day when writing mathematical notation you want to be as clear
 >- $(\forall x \in \Bbb {N}) [P(x) \wedge T(x)] \vee (\forall x \in \Bbb {R}) [R(x)]$
 >>[!success]- Solution
 >>
->>Although there are two $x$, they are different $x$, the first $x$ is bounded to P and T but the second one is bounded to R. But please don't do this, it makes it confusing to follow your notation, use different variables for each one. 
+>>Although there are two $x$'s, they are entirely different. The first $x$ is bounded to P and T but the second one is bounded to R. When you write, please don't do this, it makes it confusing to follow your work. Use different variables for each one. 
 
 ## Vacuous Statement
-These are just statements that we just say it is true or false (It just works).<br>
+These are statements that we just say are true or false, regardless of the value of the variable (It just works).<br>
 Consider the domain $D$ where $D$ is empty
 - $(\forall x \in D) [P(x)]$ is vacuously true.
 	- This is a true statement since if the domain $D$ is empty then it means that P always holds for all $x$ in $D$ because $D$ is empty.
 - $(\exists x \in D)[P(x)]$ is vacuously false.
 	- This is a false statement since if the domain $D$ is empty then there cannot possibly exist any $x$ where P holds because $D$ is empty.
-> This concept of vacuous statement is not very important so there is no needs to worry about this. 
+> This concept of vacuous statement is not very important so there is no need to worry about this. 
 
 
 >[!info] Specifying Domain 
@@ -67,7 +67,7 @@ Consider the domain $D$ where $D$ is empty
 >>
 >>Suppose the domain is all real number $\Bbb {R}$ 
 >>- $(\forall x) [P(x)]$
->>>Notice I did not explicitly write out the domain for $x$ because I already specify the domain to be all real number in advance
+>>>Notice I did not explicitly write out the domain for $x$ because I already specified the domain to be all real numbers in advance.
 
 ### Multiple and Different Quantifiers
 
@@ -76,9 +76,9 @@ A quantified statement can have multiple quantifiers defined for a predicate.
 >[!example]
 >1. $(\forall x \in \Bbb {N}) (\exists y \in \Bbb {Z}) [P(x, y) \wedge R(y)]$
 >2. $(\exists x \in \Bbb {R}) (\exists y \in \Bbb {R}) [P(x, y)]$
->> If multiple variables have matching quantifiers and domain then we can simplify the notation.
+>> If multiple variables have matching quantifiers and domains then we can simplify the notation.
 >
->For example, for number 2 the $x$ and $y$ have the same quantifiers and domain, so we can simplified that to: 
+>For example, for number 2 the $x$ and $y$ have the same quantifiers and domain, so we can simplify it to: 
 >- $(\exists x, \exists y \in \Bbb {R}) [P(x, y)]$
 
 When dealing with different quantifiers, order actually matters.
@@ -92,7 +92,7 @@ When dealing with different quantifiers, order actually matters.
 >1. $(\forall x)(\exists y) [P(x, y)]$
 >	- This reads "for all $x$, there exists a $y$ such that x > y". This is true, for every $x$ you can always find a $y$ in the set of all real number that is smaller than $x$. Note: This statement may be false in some other domains but not in the domain I have defined.
 >2. $(\exists y)(\forall x) [P(x, y)]$
->	- This reads "there exists a y such that for all x, x > y". This is false, there does not exists a real number $y$ where all $x$ is greater than that $y$, there is always going to be some $x$ that is less than that $y$. Again, this may be true in some other domains but not in the domain I have defined.
+>	- This reads "there exists a y such that for all x, x > y". This is false, there does not exist a real number $y$ where all $x$ are greater than that $y$, there is always going to be some $x$ that is less than that $y$. Again, this may be true in some other domains but not in the domain I have defined.
 
 
 >Order does not matter if all the quantifiers used are the same.
@@ -113,7 +113,7 @@ Move the $\neg$ symbol down until you reach the predicate and "flip" all quantif
 
 ## Converting Statements into Quantified Statement
 
-Assume the domain is all natural number $\Bbb {N}$ (0 is a natural number, we are not having an argument over this). 
+Assume the domain is all natural numbers $\Bbb {N}$ (0 is a natural number, we are not having an argument over this). 
 
 1. x is even
 2. x is odd
@@ -145,11 +145,11 @@ Assume the domain is all creatures $C$. Let $V(x)$ means "x is vampire".
 >The idea is that there is two vampires but we have to make sure they are not the same vampire.
 
 4. There is at most one vampire.
->$(\forall x, y) [V(x) \wedge V(x) \to x = y]$
->Here, we are saying "it is not the case that there are at least 2 vampires", so we negate the previous statement. This basically reads "If x is vampire and y is a vampire then they must be the same vampire". Recall that arrow means implication and $x \to y \equiv \neg x \vee y$ from the equivalence chart. Also remember that $\wedge$ has a higher precedence than $\to$
+>$(\forall x, y) [V(x) \wedge V(y) \to x = y]$
+>Here, we are saying "it is not the case that there are at least 2 vampires", so we negate the previous statement. This basically reads "If x is vampire and y is a vampire then they must be the same vampire". Recall that arrow means implication, and $x \to y \equiv \neg x \vee y$ from the equivalence chart. Also remember that $\wedge$ has a higher precedence than $\to$
 
 5. There is at most two vampire
->$(\forall x, y, z) [(V(x) \wedge V(x) \wedge V(z)) \to (x = y \vee x = z \vee y = z)]$
+>$(\forall x, y, z) [(V(x) \wedge V(y) \wedge V(z)) \to (x = y \vee x = z \vee y = z)]$
 >Same ideas as above. This reads "if x, y and z are all vampires then x must be the same as y or x is the same as z or y is the same as z", so one of the vampires must be the same vampire as the other two. 
 
 7. There is exactly one vampire.
