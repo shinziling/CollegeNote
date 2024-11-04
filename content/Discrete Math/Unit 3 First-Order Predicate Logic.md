@@ -184,7 +184,7 @@ Applying an interpretation means assigning a domain to each variable(s) and a me
 >1. Statement. Both variables are bounded to all real numbers and we are assuming the predicate has a meaning assigned to it
 >2. Neither. Although the first x is bounded to all natural numbers and the second x is a free variable that is not bounded to anything and does not have a quantifier (See [[#Variable Scope for Quantified Statement|Variable Scope]]).
 >3. Statement. Variable y is bounded and has a quantifier. 2.7 is a real number that is passed into the predicate itself. 
->4. Sentence. The first y is bounded and with a quantifier. The second y has a quantifier but it is not bounded to any domain (See [[#Variable Scope for Quantified Statement|Variable Scope]]).
+>4. Sentence. The first y is not bounded but has a quantifier. The second y has a quantifier but it is not bounded to any domain (See [[#Variable Scope for Quantified Statement|Variable Scope]]).
 
 
 
