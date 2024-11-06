@@ -20,10 +20,14 @@ It is similar to an introductory math proof course but is specifically tailored 
 >- Rational Numbers$(\Bbb{Q})$
 ## Course Content: 
 
-- [[Unit 1 Propositional Logic]]
-- [[Unit 2 Digital Circuit]]
-- [[Unit 3 First-Order Predicate Logic]]
-- [[Unit 4 Methods of Proof]]
+- [[1. Propositional Logic]]
+- [[2. Digital Circuit]]
+- [[3. First-Order Predicate Logic]]
+- [[4. Methods of Proof]]
+	- [[4.1 Proof by (Weak) Induction]]
+	- [[4.2 Proof by Strong Induction]]
+- [[5. Modular Operation, FTOA, and QRT]]
+	- [[5.1 Floor and Ceiling]]
 - [[Useful Theorem & Definition]]
 - [[Logic Rules]]
 
