@@ -3,12 +3,13 @@ I will post some examples of proof here and some challenging ones from my profes
 
 # Proof involving Universal Generalization
 
+## Even/Odd Proof
 
 
 
 # Proof involving Induction
 
-## Weak Induction
+## (Weak) Induction
 
 ## Strong Induction
 
