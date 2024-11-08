@@ -31,6 +31,7 @@ It is similar to an introductory math proof course but is specifically tailored 
 - [[5. Modular Operation, FTOA, and QRT]]
 	- [[5.1 Floor and Ceiling]]
 - [[Useful Theorem & Definition]]
+- [[Example Proofs]]
 - [[Logic Rules]]
 
 
