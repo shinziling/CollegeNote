@@ -9,3 +9,9 @@
 
 ![[Rules-of-Inference.png]]
 
+## Set Rules 
+
+
+![[setRules.png]]
+
+

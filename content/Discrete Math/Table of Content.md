@@ -32,8 +32,7 @@ It is similar to an introductory math proof course but is specifically tailored 
 	- [[5.1 Floor and Ceiling]]
 - [[6. Introduction to Set Theory]]
 	- [[6.1 Set Properties and Tuples (Or List)]]
-- [[Useful Theorem & Definition]]
-- [[Example Proofs]]
-- [[Logic Rules]]
-
+	- [[6.2 Proving Set Relationship]]
+- [[Rules]]
+- [[public/Discrete-Math/setRules.pdf|setRules]]
 
