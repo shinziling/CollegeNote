@@ -20,6 +20,8 @@ It is similar to an introductory math proof course but is specifically tailored 
 >- Rational Numbers$(\Bbb{Q})$
 ## Course Content: 
 
+> Disclaimer: Most of notes were taken from my professor's lecture slides. Some of the notes below were described in words that makes sense to me and may not to you.
+
 - [[1. Propositional Logic]]
 - [[2. Digital Circuit]]
 - [[3. First-Order Predicate Logic]]
@@ -33,6 +35,7 @@ It is similar to an introductory math proof course but is specifically tailored 
 - [[6. Introduction to Set Theory]]
 	- [[6.1 Set Properties and Tuples (Or List)]]
 	- [[6.2 Proving Set Relationship]]
+- [[7. Combinatorics and Probability]]
+	- [[7.1 Probability Concepts]]
 - [[Rules]]
-- [[public/Discrete-Math/setRules.pdf|setRules]]
 
