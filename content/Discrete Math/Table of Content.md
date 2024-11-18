@@ -20,7 +20,8 @@ It is similar to an introductory math proof course but is specifically tailored 
 >- Rational Numbers$(\Bbb{Q})$
 ## Course Content: 
 
-> Disclaimer: Most of notes were taken from my professor's lecture slides. Some of the notes below were described in words that makes sense to me and may not to you.
+> Disclaimer: Most of notes and examples were taken from my professor's lecture slides.
+
 
 - [[1. Propositional Logic]]
 - [[2. Digital Circuit]]
@@ -37,5 +38,7 @@ It is similar to an introductory math proof course but is specifically tailored 
 	- [[6.2 Proving Set Relationship]]
 - [[7. Combinatorics and Probability]]
 	- [[7.1 Probability Concepts]]
+	- [[7.2 Combinatorics (Counting) Concepts]]
+	- [[Examples with Combinatorics and Probability|Examples from Lectures]]
 - [[Rules]]
 
