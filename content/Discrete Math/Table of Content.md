@@ -40,5 +40,11 @@ It is similar to an introductory math proof course but is specifically tailored 
 	- [[7.1 Probability Concepts]]
 	- [[7.2 Combinatorics (Counting) Concepts]]
 	- [[Examples with Combinatorics and Probability|Examples from Lectures]]
+- [[8. Functions]]
+	- [[8.1 Composition Function]]
+	- [[8.2 Pigeonhole Principle]]
+	- [[8.1.1 Proving Function|Proving Function]]
+- [[9. Relations]]
+	- [[9.1 Relation Concepts]]
 - [[Rules]]
 
