@@ -11,4 +11,5 @@ This is an area where multiple courses material notes will be posted.
 # Other Documentation
 
 - [[Git]]
+- NeoVim (work in progress)
 
