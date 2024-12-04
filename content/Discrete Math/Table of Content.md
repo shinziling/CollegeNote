@@ -44,5 +44,6 @@ It is similar to an introductory math proof course but is specifically tailored 
 	- [[8.1.1 Proving Function|Proving Function]]
 - [[9. Relations]]
 	- [[9.1 Relation Concepts]]
+- [[10. Ordinal and Cardinal]]
 - [[Rules]]
 
