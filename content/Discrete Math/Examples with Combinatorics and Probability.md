@@ -16,6 +16,7 @@
 	2. Using permutations
 		1. $\dfrac {11!}{4! * 4! * 2!}$
 		2. Letter i repeats 4 times, s repeats 4 times, and p repeats 2 times. 
+
 Suppose you have 5 red crayons, 7 blue crayons, 10 yellow crayons. How many ways are there to arrange them in a row? 
 - ${22 \choose 5}{17 \choose 7}{10 \choose 10}$
 	- There is 22 crayons in total, choose 5 positions for the red ones, 7 positions for the  blue ones and 10 positions for the yellow ones. 
