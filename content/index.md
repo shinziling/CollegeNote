@@ -6,10 +6,14 @@ This is an area where multiple courses material notes will be posted.
 
 
 # Computer Science
-- [[Table of Content|Discrete Structure]]
+- [[Discrete Math/Table of Content|Discrete Structure]]
+- [[Computer Systems/Table of Content|Introduction to Computer]]
+
+
+# Business
+- [[content/Accounting I/Table of Content|Accounting I]]
 
 # Other Documentation
 
 - [[Git]]
-- Neovim (work in progress)
 
