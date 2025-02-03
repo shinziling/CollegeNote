@@ -2,7 +2,6 @@
 title: Discrete Structure
 tags:
   - "#IntrotoMathProof"
-  - WIP
   - Discrete-Math
 ---
 This is introductory course that talks about the basics of discrete math. 
