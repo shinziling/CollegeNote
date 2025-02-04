@@ -10,9 +10,6 @@ This is an area where multiple courses material notes will be posted.
 - [[Computer Systems/Table of Content|Introduction to Computer]]
 
 
-# Business
-- [[Accounting I/Table of Content|Accounting I]]
-
 # Other Documentation
 
 - [[Git]]
