@@ -11,7 +11,7 @@ This is an area where multiple courses material notes will be posted.
 
 
 # Business
-- [[content/Accounting I/Table of Content|Accounting I]]
+- [[Accounting I/Table of Content|Accounting I]]
 
 # Other Documentation
 

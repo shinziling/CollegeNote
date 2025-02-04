@@ -24,6 +24,6 @@ Computer stores data and information in memory address that corresponds to a mem
 - The content that is stored at each memory cell is changeable. 
 
 # Course Content Notes: 
-- [[1. C introduction]]
+- [[1. C introduction (Basics)]]
 	- [[1.1 C Pointers]]
 	- [[1.2 C Data types]]
